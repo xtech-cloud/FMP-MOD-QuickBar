@@ -1,0 +1,19 @@
+
+/_dist_/
+/_build_/
+/QuickBar/Assets/TextMesh Pro/
+/QuickBar/Assets/TextMesh Pro.meta
+/QuickBar/Assets/Plugins/
+/QuickBar/Assets/Plugins.meta
+/QuickBar/Assets/3rd/
+/QuickBar/Assets/3rd.meta
+/QuickBar/Library/
+/QuickBar/obj/
+/QuickBar/Logs/
+/QuickBar/Temp/
+/QuickBar/UserSettings/
+/QuickBar/*.sln
+/QuickBar/*.csproj
+/QuickBar/.vsconfig
+/QuickBar/.vs/
+/.UNITY_HOME.env

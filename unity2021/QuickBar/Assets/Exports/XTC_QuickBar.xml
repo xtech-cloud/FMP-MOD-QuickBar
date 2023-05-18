@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MyConfig version="1.0">
+  <!-- UI 
+      visible: 预加载完成后是否显示
+      slot: ui根节点在主Canvas中的挂载路径
+    -->
+  <UI visible="true" slot="[root]"/>
+  <!-- World
+      visible: 预加载完成后是否显示
+      slot: world根节点的挂载路径
+    -->
+  <World visible="true" slot="[root]"/>
+  <!-- 远程过程调用
+      address: 地址
+    -->
+  <GRPC address="https://localhost:19000"/>
+  <!-- 样式列表
+      name: 名称
+      Bar.image: 工具栏的背景图，需支持九宫格切割
+      Bar.Border: 工具栏的背景图的九宫格切割
+      Bar.Anchor: 工具栏的锚点
+      Bar.Layout.orient: 工具栏的布局方向，可选值为(horizontal, vertical)
+      Bar.Layout.margin: 工具栏的布局边界间距
+      Bar.Layout.spacing: 工具栏的入口间的间隔
+      Bar.Layout.entryWidth: 工具栏的入口的宽度
+      Bar.Layout.entryHeight: 工具栏的入口的高度
+      Bar.Entry.icon: 工具栏的入口的图标
+      Bar.Entry.SubjectS: 工具栏的入口激活后发布的主题列表
+    -->
+  <Styles>
+    <Style name="default">
+      <Bar image="bg_bottom.png">
+        <Border left="48" right="48" top="48" bottom="48"/>
+        <Anchor horizontal="center" vertical="bottom" marginX="0" marginY="0"/>
+        <Layout orient="horizontal" marginLeft="24" marginRight="24" marginTop="24" marginBottom="24" spacing="12" entryWidth="64" entryHeight="64"/>
+      </Bar>
+      <EntryS>
+        <Entry icon="entry-1.png">
+          <SubjectS>
+            <Subject message="/XTC/QuickBar/Close">
+              <Parameters>
+                <Parameter key="uid" value="default" type="string"/>
+                <Parameter key="delay" value="0" type="float"/>
+              </Parameters>
+            </Subject>
+          </SubjectS>
+        </Entry>
+        <Entry icon="entry-2.png">
+          <SubjectS>
+            <Subject message="/XTC/QuickBar/Close">
+              <Parameters>
+                <Parameter key="uid" value="default" type="string"/>
+                <Parameter key="delay" value="0" type="float"/>
+              </Parameters>
+            </Subject>
+          </SubjectS>
+        </Entry>
+        <Entry icon="entry-3.png">
+          <SubjectS>
+            <Subject message="/XTC/QuickBar/Close">
+              <Parameters>
+                <Parameter key="uid" value="default" type="string"/>
+                <Parameter key="delay" value="0" type="float"/>
+              </Parameters>
+            </Subject>
+          </SubjectS>
+        </Entry>
+      </EntryS>
+    </Style>
+  </Styles>
+  <!-- 预创建的实例列表
+      uid: 实例的唯一ID
+      style: 使用的样式名
+      uiRoot: UI挂载的根节点（需可见），空值时等于UI.slot
+      uiSlot: UI在uiRoot下的挂载路径
+      worldRoot: World挂载的根节点（需可见），空值时等于World.slot
+      worldSlot: World在worldRoot下的路径
+    -->
+  <Instances>
+    <Instance uid="default" style="default" uiRoot="" uiSlot="" worldRoot="" worldSlot=""/>
+  </Instances>
+  <!-- 预加载 -->
+  <Preload>
+    <!-- 消息订阅的主题
+          message: 消息
+          Parameter.key: 参数的键
+          Parameter.value: 参数的值
+          Parameter.type: 参数的类型，支持的类型为string,int,float,bool
+        -->
+    <Subjects>
+      <Subject message="/XTC/QuickBar/Open">
+        <Parameters>
+          <Parameter key="uid" value="default" type="string"/>
+          <Parameter key="delay" value="0" type="float"/>
+        </Parameters>
+      </Subject>
+    </Subjects>
+  </Preload>
+</MyConfig>
